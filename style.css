@@ -10,7 +10,7 @@ html,body,.container-fluid, .stretch {
   }
 
 .sidebar-sticky{
-    height: 100%;
+    height: auto;
     background-color: #66bb6a!important;
     -webkit-box-shadow: 1px 0px 3px 0px rgba(99,99,99,1);
     -moz-box-shadow: 1px 0px 3px 0px rgba(99,99,99,1);
