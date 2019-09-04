@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Frame</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -17,26 +17,30 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li>
-                        <button class="navbar-toggler" onclick="toogleLabels()"><span><i class="fa fa-bars fa-1x"></i></span></button>
+                        <button class="navbar-toggler" onclick="toogleLabels()"><span><i
+                                    class="fa fa-bars fa-1x"></i></span></button>
                     </li>
                     <li class="nav-item">
-                        <a onclick="showClient()" class="nav-link"><i class="fa fa-user-o fa-lg"></i><span class="collapse"
-                                name="linkLabel">Client</span></a>
+                        <a onclick="showClient()" class="nav-link"><i class="fa fa-user-o fa-lg"></i><span
+                                class="collapse" name="linkLabel">Client</span></a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="showInteraction()" class="nav-link"><i class="fa fa-exchange fa-lg"></i><span class="collapse" name="linkLabel">Interaction</span></a>
+                        <a onclick="showInteraction()" class="nav-link"><i class="fa fa-exchange fa-lg"></i><span
+                                class="collapse" name="linkLabel">Interaction</span></a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="showRequest()" class="nav-link"><i class="fa fa-bullhorn fa-lg"></i><span class="collapse" name="linkLabel">Service
+                        <a onclick="showRequest()" class="nav-link"><i class="fa fa-bullhorn fa-lg"></i><span
+                                class="collapse" name="linkLabel">Service
                                 request</span></a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="showClientHistory()" class="nav-link"><i class="fa fa-history fa-lg"></i><span class="collapse" name="linkLabel">Client
+                        <a onclick="showClientHistory()" class="nav-link"><i class="fa fa-history fa-lg"></i><span
+                                class="collapse" name="linkLabel">Client
                                 history</span></a>
                     </li>
                     <li class="nav-item">
-                        <a onclick="showGreenMile()" class="nav-link"><i class="fa fa-leaf fa-lg"></i><span class="collapse"
-                                name="linkLabel">GreenMile</span></a>
+                        <a onclick="showGreenMile()" class="nav-link"><i class="fa fa-leaf fa-lg"></i><span
+                                class="collapse" name="linkLabel">GreenMile</span></a>
                     </li>
                 </ul>
             </div>
@@ -53,23 +57,21 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
-                                        <label class="text-muted" for="clientId">Title</label>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4 align-self-end">
+                                        <label class="text-muted" for="clientId">Id</label>
                                         <div class="input-group input-group-sm">
-                                            <select type="text" class="form-control rounded-right">
-                                                <option>Mr.</option>
-                                            </select>
+                                            <input type="text" class="form-control rounded-right" name="id" id="id">
                                         </div>
                                     </div>
                                     <div class="col-8 col-sm-5 col-md-6 col-lg-4 align-self-end">
                                         <label class="text-muted" for="clientId">Name</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" name="policyNumber"
-                                                id="policyNumber" value="Albert Keating">
+                                            <input type="text" class="form-control rounded-right" name="name" id="name">
                                         </div>
                                     </div>
                                     <div class="col-8 col-sm-5 col-md-4 col-lg-4 align-self-end" id="buttonContainer">
-                                        <button class="btn btn-outline-success btn-sm" type="button">Search</button>
+                                        <button onclick="getClient()" class="btn btn-outline-success btn-sm"
+                                            type="button">Search</button>
                                     </div>
                                 </div>
 
@@ -83,8 +85,7 @@
                                     <div class="col-12 col-sm-5 col-md-6 col-lg-4">
                                         <label for="clientFirstName">Search term 1/2</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" id="clientFirstName"
-                                                value="DC">
+                                            <input type="text" class="form-control rounded-right" id="search">
                                         </div>
                                     </div>
                                 </div>
@@ -98,40 +99,46 @@
                                     <div class="col-12 col-sm-5 col-md-6 col-lg-8">
                                         <label class="text-muted" for="address">Street/House number</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" id="address" value="MakeItEleven">
+                                            <input type="text" class="form-control rounded-right" id="street">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row mb-1">
                                     <div class="col-12 col-sm-5 col-md-6 col-lg-8">
-                                        <label class="text-muted" for="city">Postal code/City</label>
+                                        <label class="text-muted" for="postal">Postal code/City</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" id="city" value="Dublin">
+                                            <input type="text" class="form-control rounded-right" id="postal">
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-sm-5 col-md-6 col-lg-4">
                                         <label class="text-muted" for="country">Country</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" id="country" value="Ireland">
+                                            <input type="text" class="form-control rounded-right" id="country">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row mb-1">
                                     <div class="col-12 col-sm-5 col-md-8 col-lg-4">
-                                        <label class="text-muted" for="phone">Region</label>
+                                        <label class="text-muted" for="region">Region</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" id="phone" value="D18 F4E0">
+                                            <input type="text" class="form-control rounded-right" id="region">
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-sm-5 col-md-8 col-lg-4">
-                                        <label class="text-muted" for="email">Transportation zone</label>
+                                        <label class="text-muted" for="transportation">Transportation zone</label>
                                         <div class="input-group input-group-sm">
-                                            <input type="text" class="form-control rounded-right" id="email" value="0000000012">
+                                            <input type="text" class="form-control rounded-right" id="transportation">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row float-right">
+                                    <div class="col-12">
+                                        <button onclick="saveClient()" class="btn btn-outline-info btn-sm"
+                                            type="button">Save</button>
                                     </div>
                                 </div>
                                 <div>
@@ -200,8 +207,10 @@
                                     </div>
                                     <div class="col-8 col-sm-5 col-md-6 col-lg-4">
                                         <div class="input-group-sm">
-                                            <label class="text-muted" for="distributionChannel">DistributionChannel</label>
-                                            <select class="form-control" name="distributionChannel" id="distributionChannel">
+                                            <label class="text-muted"
+                                                for="distributionChannel">DistributionChannel</label>
+                                            <select class="form-control" name="distributionChannel"
+                                                id="distributionChannel">
                                                 <option>
 
                                                 </option>
@@ -326,7 +335,8 @@
                                     <div class="col-8 col-sm-5 col-md-6 col-lg-4">
                                         <div class="input-group-sm">
                                             <label class="text-muted" for="correspondenceType">Correspondence</label>
-                                            <select class="form-control" name="correspondenceType" id="correspondenceType">
+                                            <select class="form-control" name="correspondenceType"
+                                                id="correspondenceType">
                                                 <option>
 
                                                 </option>
@@ -411,6 +421,39 @@
     const show = 'col show';
     const collapse = 'col collapse';
 
+    let id = document.getElementById('id');
+    let street = document.getElementById('street');
+    let postal = document.getElementById('postal');
+    let name = document.getElementById('name');
+    let search = document.getElementById('search');
+    let region = document.getElementById('region');
+    let country = document.getElementById('country');
+    let transportation = document.getElementById('transportation');
+
+    let selectedClient;
+
+
+    //harcoded clients
+    var clients = [{
+        id: 1234,
+        name: 'Albert Keating',
+        search: 'DC',
+        street: 'MakeItEleven',
+        postal: 'Dublin',
+        region: 'D18 F4E0',
+        country: 'Ireland',
+        transportation: '0000000012'
+    }, {
+        id: 4567,
+        name: 'Conor Kelly',
+        search: 'AB',
+        street: '22 Dawson Street',
+        postal: 'Dublin',
+        region: 'D02TF98',
+        country: 'Ireland',
+        transportation: '0000000012'
+    }];
+
     function showGreenMile() {
         for (var i = 0; i < views.length; i++) {
             {
@@ -444,11 +487,43 @@
         }
     }
     function showClientHistory() {
+
         for (var i = 0; i < views.length; i++) {
             {
                 views[i].className = collapse;
             };
             clientHistory.className = show;
         }
+    }
+
+    function getClient() {
+        let clientId = document.getElementById("id").value;
+        clients.forEach(client => {
+            if (client.id == clientId || client.name == name.value) {
+                selectedClient = client;
+                name.value = client.name;
+                search.value = client.search;
+                street.value = client.street;
+                postal.value = client.postal;
+                region.value = client.region;
+                country.value = client.country;
+                transportation.value = client.transportation;
+            }
+        });
+    }
+
+    function saveClient() {
+        if (selectedClient) {
+            let index = clients.findIndex(client => client.id == selectedClient.id)
+            clients[index].name = name.value;
+            clients[index].search = search.value
+            clients[index].street = street.value
+            clients[index].postal = postal.value
+            clients[index].region = region.value
+            clients[index].client.country = country.value;
+            clients[index].transportation = transportation.value;
+        }
+
+
     }
 </script>
