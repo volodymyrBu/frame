@@ -21,6 +21,11 @@
                                     class="fa fa-bars fa-1x"></i></span></button>
                     </li>
                     <li class="nav-item">
+                        <a onclick="showClientData()" class="nav-link"><i class="fa fa-user-o fa-lg"></i><span
+                                class="fb-badges">D</span><span><span class="collapse" name="linkLabel">Client
+                                    data</span></a>
+                    </li>
+                    <li class="nav-item">
                         <a onclick="showClient()" class="nav-link"><i class="fa fa-user-o fa-lg"></i><span
                                 class="collapse" name="linkLabel">Client</span></a>
                     </li>
@@ -45,7 +50,114 @@
                 </ul>
             </div>
 
-            <div class="col show" id="client">
+            <div class="col show" id="clientData">
+                <div class="row mt-4">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Name</h5>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4">
+                                        <label class="text-muted" for="clientId">Title</label>
+                                        <div class="input-group input-group-sm">
+                                            <select type="text" class="form-control rounded-right">
+                                                <option>Mr.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-6 col-lg-4 align-self-end">
+                                        <label class="text-muted" for="clientId">Name</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" name="policyNumber"
+                                                id="policyNumber" value="Albert Keating">
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-sm-5 col-md-4 col-lg-4 align-self-end" id="buttonContainer">
+                                        <button class="btn btn-outline-success btn-sm" type="button">Search</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Search terms</h5>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-12 col-sm-5 col-md-6 col-lg-4">
+                                        <label for="clientFirstName">Search term 1/2</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" id="clientFirstName"
+                                                value="DC">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>Street address</h5>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-12 col-sm-5 col-md-6 col-lg-8">
+                                        <label class="text-muted" for="address">Street/House number</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" id="address"
+                                                value="MakeItEleven">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-1">
+                                    <div class="col-12 col-sm-5 col-md-6 col-lg-8">
+                                        <label class="text-muted" for="city">Postal code/City</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" id="city"
+                                                value="Dublin">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-sm-5 col-md-6 col-lg-4">
+                                        <label class="text-muted" for="country">Country</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" id="country"
+                                                value="Ireland">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-1">
+                                    <div class="col-12 col-sm-5 col-md-8 col-lg-4">
+                                        <label class="text-muted" for="phone">Region</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" id="phone"
+                                                value="D18 F4E0">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-sm-5 col-md-8 col-lg-4">
+                                        <label class="text-muted" for="email">Transportation zone</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control rounded-right" id="email"
+                                                value="0000000012">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col collapse" id="client">
                 <div class="row mt-4">
                     <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                         <div class="card shadow">
@@ -418,6 +530,7 @@
     let interaction = document.getElementById('interaction');
     let serviceRequest = document.getElementById('serviceRequest');
     let clientHistory = document.getElementById('clientHistory');
+    let clientData = document.getElementById('clientData');
     const show = 'col show';
     const collapse = 'col collapse';
 
@@ -493,6 +606,14 @@
                 views[i].className = collapse;
             };
             clientHistory.className = show;
+        }
+    }
+    function showClientData() {
+        for (var i = 0; i < views.length; i++) {
+            {
+                views[i].className = collapse;
+            };
+            clientData.className = show;
         }
     }
 
