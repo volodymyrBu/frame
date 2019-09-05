@@ -83,20 +83,5 @@ html,body,.container-fluid, .stretch {
   .fullHeiht{
     height: 100%;
   }
-
-  .fb-badges{
-    color: #fff;
-    position: absolute;
-    text-align: center;
-    display: inline-block;
-    border-radius: 50%;
-    line-height: 22px;
-    font-weight: 600;
-    font-size: 10px;
-    width: 22px;
-    height: 22px;
-    left: 16px;
-    top: 53px;
-  }
   
   
